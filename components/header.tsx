@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Menu } from 'lucide-react'
+import { Menu, Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function Header() {
@@ -7,9 +7,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background border-b border-border">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-600 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            🍪
-          </div>
+          <Scale className="w-6 h-6 bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent" strokeWidth={2.5} />
           <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
             EasyCo
           </span>
