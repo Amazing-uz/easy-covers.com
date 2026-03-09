@@ -21,16 +21,16 @@ export function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#battles" className="text-sm font-medium hover:text-primary transition">
+          <Link href="/comparison" className="text-sm font-medium hover:text-primary transition">
             Comparisons
           </Link>
-          <Link href="#guides" className="text-sm font-medium hover:text-primary transition">
+          <Link href="/guide" className="text-sm font-medium hover:text-primary transition">
             Guides
           </Link>
-          <Link href="#tests" className="text-sm font-medium hover:text-primary transition">
+          <Link href="/tests" className="text-sm font-medium hover:text-primary transition">
             Tests
           </Link>
-          <Link href="#picks" className="text-sm font-medium hover:text-primary transition">
+          <Link href="/top-picks" className="text-sm font-medium hover:text-primary transition">
             Top Picks
           </Link>
         </div>
