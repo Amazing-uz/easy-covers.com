@@ -3,6 +3,7 @@
 import { Card } from '@/components/ui/card'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface BlogPostProps {
   title: string
@@ -14,17 +15,22 @@ interface BlogPostProps {
   link?: string
 }
 
-export function BlogPost({ title, category, excerpt, color, badge, link = '#' }: BlogPostProps) {
+export function BlogPost({ title, category, excerpt, image, color, badge, link = '#' }: BlogPostProps) {
   const content = (
     <Card className={`group overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 border-2 bg-gradient-to-br ${color}/5 to-transparent`}>
-      {/* Image Placeholder */}
-      <div className={`h-40 bg-gradient-to-br ${color} relative overflow-hidden`}>
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h40v40H0z" fill-opacity=".05"/%3E%3C/svg%3E")'
-        }} />
-        <div className="absolute top-4 right-4 flex items-center gap-2">
+      {/* Image */}
+      <div className={`h-48 relative overflow-hidden ${!image ? `bg-gradient-to-br ${color}` : ''}`}>
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : null}
+        <div className="absolute top-4 right-4 z-10">
           {badge && (
-            <span className="bg-white/90 text-foreground text-xs font-bold px-3 py-1 rounded-full">
+            <span className="bg-white/90 text-foreground text-xs font-bold px-3 py-1 rounded-full shadow-sm">
               {badge}
             </span>
           )}
@@ -58,7 +64,8 @@ export function BlogSection() {
       category: 'Guide',
       excerpt: 'Learn how to choose the best phone case based on your needs and lifestyle.',
       color: 'from-purple-500',
-      badge: '📚 Guide',
+      image: '/images/blog/guide-choosing.jpg',
+      badge: 'Guide',
       link: '/guide'
     },
     {
@@ -66,7 +73,8 @@ export function BlogSection() {
       category: 'Tests',
       excerpt: 'We dropped every type of case from 6 feet high and compared the results.',
       color: 'from-orange-500',
-      badge: '🔬 Test',
+      image: '/images/blog/drop-test.jpg',
+      badge: 'Test',
       link: '/comparison'
     },
     {
@@ -74,7 +82,8 @@ export function BlogSection() {
       category: 'Reviews',
       excerpt: 'Innovative materials that protect your phone and the planet.',
       color: 'from-green-500',
-      badge: '🌍 Eco',
+      image: '/images/blog/eco-alternatives.jpg',
+      badge: 'Eco',
       link: '/guide'
     },
     {
@@ -82,7 +91,8 @@ export function BlogSection() {
       category: 'Comparisons',
       excerpt: 'Detailed analysis of three popular materials with real examples.',
       color: 'from-blue-500',
-      badge: '⚔️ Battle',
+      image: '/images/blog/leather-vs-synthetic.jpg',
+      badge: 'Battle',
       link: '/comparison'
     },
   ]
