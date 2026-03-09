@@ -1,0 +1,136 @@
+{
+  "name": "EasyCo - Product Comparison Blog",
+  "version": "1.0.0",
+  "description": "Modern product comparison blog with honest reviews, pros/cons analysis, and guides",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/easyco"
+  },
+  "projectConfig": {
+    "title": "EasyCo",
+    "tagline": "Честные сравнения товаров",
+    "description": "Блог для сравнения товаров с анализом плюсов, минусов и честными обзорами",
+    "website": "https://easyco.vercel.app"
+  },
+  "design": {
+    "colorPalette": {
+      "primary": "#9D50BB",
+      "primaryName": "Electric Lavender",
+      "secondary": "#FF8235",
+      "secondaryName": "Mango Tango",
+      "accent": "#00FFC3",
+      "accentName": "Cyber Mint",
+      "destructive": "#FF4B2B",
+      "destructiveName": "Hot Coral"
+    },
+    "typography": {
+      "headings": "Space Grotesk",
+      "body": "Plus Jakarta Sans",
+      "mono": "Geist Mono"
+    },
+    "designApproach": [
+      "Brutalist-Light",
+      "Hard Shadows",
+      "Maximalist Colors",
+      "Split-Screen Layout",
+      "Package-like Cards"
+    ]
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "components": [
+        "Header",
+        "HeroSection",
+        "FeaturedProducts",
+        "BlogSection",
+        "CTASection",
+        "Footer"
+      ]
+    },
+    "comparison": {
+      "path": "/comparison",
+      "title": "Кожа vs Силикон",
+      "description": "Полное сравнение двух самых популярных материалов",
+      "components": [
+        "Header",
+        "ProConComparison",
+        "ComparisonMetrics",
+        "Footer"
+      ]
+    },
+    "guide": {
+      "path": "/guide",
+      "title": "Полный гайд по выбору чехла",
+      "description": "Все что нужно знать о выборе правильного чехла",
+      "components": [
+        "Header",
+        "GuideContent",
+        "ComparisonTable",
+        "Footer"
+      ]
+    }
+  },
+  "features": {
+    "responsive": {
+      "mobile": "< 640px",
+      "tablet": "640px - 1024px",
+      "desktop": "> 1024px"
+    },
+    "components": [
+      "Interactive Hero Slider",
+      "Product Cards with Ratings",
+      "Split-Screen Pro/Con Comparison",
+      "Blog Grid Layout",
+      "Responsive Navigation",
+      "Email Subscription"
+    ],
+    "seo": {
+      "title": "EasyCo - Сравнение товаров",
+      "description": "Честные сравнения и обзоры товаров. Полная информация о плюсах и минусах.",
+      "keywords": [
+        "сравнение товаров",
+        "обзоры",
+        "тесты",
+        "плюсы и минусы",
+        "рекомендации"
+      ]
+    }
+  },
+  "technologies": {
+    "framework": "Next.js 16",
+    "styling": "Tailwind CSS 4",
+    "ui": "shadcn/ui",
+    "icons": "lucide-react",
+    "fonts": "Google Fonts (Space Grotesk, Plus Jakarta Sans)",
+    "animations": "CSS Animations",
+    "analytics": "Vercel Analytics"
+  },
+  "performance": {
+    "bundler": "Turbopack",
+    "optimization": [
+      "Image Optimization",
+      "Font Optimization",
+      "Tree Shaking",
+      "Code Splitting",
+      "CSS Minification"
+    ]
+  },
+  "futureEnhancements": [
+    "Product comparison database",
+    "User ratings and reviews",
+    "Advanced filtering and sorting",
+    "Newsletter system",
+    "Social sharing",
+    "Dark mode toggle",
+    "Multi-language support",
+    "Search functionality",
+    "User comments section",
+    "Admin dashboard"
+  ],
+  "deployment": {
+    "platform": "Vercel",
+    "region": "Auto",
+    "environment": "Production"
+  }
+}

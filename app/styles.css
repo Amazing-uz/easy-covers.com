@@ -1,0 +1,112 @@
+/* Custom animations and effects for EasyCo */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Utility classes */
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.gradient-animated {
+  animation: gradientShift 6s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Hard shadow effect */
+.shadow-hard {
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-hard-lg {
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hover:shadow-hard:hover {
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Gradient backgrounds */
+.gradient-primary-secondary {
+  @apply bg-gradient-to-r from-primary to-secondary;
+}
+
+.gradient-primary-accent {
+  @apply bg-gradient-to-r from-primary via-secondary to-accent;
+}
+
+/* Text gradients */
+.text-gradient {
+  @apply bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent;
+}
+
+/* Pro/Con styling */
+.pro-bg {
+  @apply bg-gradient-to-b from-cyan-400/10 to-cyan-400/5;
+  border-left: 4px solid var(--cyber-mint);
+}
+
+.con-bg {
+  @apply bg-gradient-to-b from-orange-400/10 to-orange-400/5;
+  border-left: 4px solid var(--hot-coral);
+}
+
+/* Card animations on hover */
+.card-hover:hover {
+  @apply shadow-lg -translate-y-1 transition-all;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
+}
