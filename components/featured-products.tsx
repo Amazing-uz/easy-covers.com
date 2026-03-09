@@ -8,8 +8,7 @@ export function FeaturedProducts() {
     {
       title: 'Leather Case',
       description: 'Premium protection with elegant style',
-      emoji: '🧥',
-      color: 'from-amber-500',
+      image: '/images/cards/leather-case.jpg',
       badge: 'Premium',
       rating: 5,
       link: '/comparison'
@@ -17,8 +16,7 @@ export function FeaturedProducts() {
     {
       title: 'Silicone Case',
       description: 'Lightweight and convenient protection',
-      emoji: '🏰',
-      color: 'from-cyan-400',
+      image: '/images/cards/silicone-case.jpg',
       badge: 'Popular',
       rating: 4,
       link: '/comparison'
@@ -26,8 +24,7 @@ export function FeaturedProducts() {
     {
       title: 'Eco Case',
       description: 'Eco-friendly choice for the planet',
-      emoji: '🌿',
-      color: 'from-green-500',
+      image: '/images/cards/eco-case.jpg',
       badge: 'Eco-Friendly',
       rating: 4.5,
       link: '/guide'
@@ -60,8 +57,7 @@ export function FeaturedProducts() {
               <ProductCard
                 title={product.title}
                 description={product.description}
-                emoji={product.emoji}
-                color={product.color}
+                image={product.image}
                 badge={product.badge}
                 rating={product.rating}
               />

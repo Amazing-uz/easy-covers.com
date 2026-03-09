@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Star, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function TopPicksPage() {
   const topPicks = [
@@ -12,8 +13,7 @@ export default function TopPicksPage() {
       title: 'Leather Case Pro Max',
       price: '$89.99',
       rating: 5,
-      emoji: '🧥',
-      color: 'from-amber-400',
+      image: '/images/cards/leather-case.jpg',
       pros: ['Premium feel', 'Excellent protection', 'Improves with age', 'Durable'],
       cons: ['Expensive', 'Requires maintenance'],
       bestFor: 'Those who value premium quality and don\'t mind maintenance',
@@ -24,8 +24,7 @@ export default function TopPicksPage() {
       title: 'Silicone Case Standard',
       price: '$14.99',
       rating: 4,
-      emoji: '🏰',
-      color: 'from-cyan-400',
+      image: '/images/cards/silicone-case.jpg',
       pros: ['Affordable', 'Easy to clean', 'Great grip', 'Multiple colors'],
       cons: ['Gets sticky', 'Collects dust'],
       bestFor: 'Everyday users looking for practical protection',
@@ -36,8 +35,7 @@ export default function TopPicksPage() {
       title: 'TPU Hybrid Case',
       price: '$24.99',
       rating: 4.5,
-      emoji: '🛡️',
-      color: 'from-blue-400',
+      image: '/images/cards/tpu-hybrid.jpg',
       pros: ['Perfect balance', 'Good drop protection', 'Easy to clean', 'Reliable'],
       cons: ['Less stylish', 'Thick'],
       bestFor: 'Those seeking the best balance of protection and practicality',
@@ -48,8 +46,7 @@ export default function TopPicksPage() {
       title: 'Eco-Friendly Case',
       price: '$19.99',
       rating: 4.2,
-      emoji: '🌿',
-      color: 'from-green-500',
+      image: '/images/cards/eco-case.jpg',
       pros: ['Biodegradable', 'Eco-conscious', 'Good protection', 'Affordable'],
       cons: ['Less durable', 'Limited colors'],
       bestFor: 'Environmentally conscious users',
@@ -88,9 +85,9 @@ export default function TopPicksPage() {
                 <Card key={pick.rank} className="p-6 md:p-8 border-2 hover:shadow-lg transition">
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
                     {/* Rank and Image */}
-                    <div className="flex flex-col items-center justify-center">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${pick.color} to-transparent rounded-xl flex items-center justify-center text-4xl mb-2`}>
-                        {pick.emoji}
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      <div className="relative w-24 h-24 rounded-xl overflow-hidden border border-border shadow-sm">
+                        <Image src={pick.image} alt={pick.title} fill className="object-cover" />
                       </div>
                       <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-bold">
                         #{pick.rank}
