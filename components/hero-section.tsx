@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -12,15 +13,15 @@ export function HeroSection() {
     {
       title: 'Leather vs Silicone',
       subtitle: 'Which phone case offers the best protection?',
-      left: { name: 'Leather Case', emoji: '🧥', color: 'from-orange-400' },
-      right: { name: 'Silicone Case', emoji: '🏰', color: 'from-cyan-400' },
+      left: { name: 'Leather Case', img: '/images/cards/leather-case.jpg', bg: 'bg-amber-50' },
+      right: { name: 'Silicone Case', img: '/images/cards/silicone-case.jpg', bg: 'bg-cyan-50' },
       link: '/comparison'
     },
     {
       title: 'iPhone vs Android',
       subtitle: 'The ultimate smartphone showdown',
-      left: { name: 'iPhone 16', emoji: '🍎', color: 'from-gray-400' },
-      right: { name: 'Samsung Galaxy', emoji: '🌈', color: 'from-blue-400' },
+      left: { name: 'iPhone 16', img: '/images/cards/iphone.jpg', bg: 'bg-gray-50' },
+      right: { name: 'Samsung Galaxy', img: '/images/cards/samsung.jpg', bg: 'bg-blue-50' },
       link: '/comparison'
     },
   ]
@@ -53,28 +54,38 @@ export function HeroSection() {
               </div>
 
               {/* Versus Container */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+              <div className="relative grid grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg mb-8 h-64">
                 {/* Left Side */}
-                <div className={`bg-gradient-to-br ${battles[activeSlide].left.color} to-orange-500 rounded-xl p-8 text-white shadow-lg transform transition hover:scale-105`}>
-                  <div className="text-5xl mb-4">{battles[activeSlide].left.emoji}</div>
-                  <h3 className="text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                    {battles[activeSlide].left.name}
-                  </h3>
+                <div className={`${battles[activeSlide].left.bg} flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-300`}>
+                  <div className="relative w-36 h-36">
+                    <Image
+                      src={battles[activeSlide].left.img}
+                      alt={battles[activeSlide].left.name}
+                      fill
+                      className="object-contain drop-shadow-xl"
+                    />
+                  </div>
+                  <span className="text-sm font-bold text-foreground/70">{battles[activeSlide].left.name}</span>
                 </div>
 
                 {/* VS Badge */}
-                <div className="hidden md:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-white border-4 border-purple-600 rounded-full w-16 h-16 flex items-center justify-center font-bold text-purple-600 text-lg shadow-lg">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="bg-background border-4 border-primary rounded-full w-14 h-14 flex items-center justify-center font-black text-primary text-base shadow-xl">
                     VS
                   </div>
                 </div>
 
                 {/* Right Side */}
-                <div className={`bg-gradient-to-br ${battles[activeSlide].right.color} to-cyan-500 rounded-xl p-8 text-white shadow-lg transform transition hover:scale-105`}>
-                  <div className="text-5xl mb-4">{battles[activeSlide].right.emoji}</div>
-                  <h3 className="text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                    {battles[activeSlide].right.name}
-                  </h3>
+                <div className={`${battles[activeSlide].right.bg} flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-300`}>
+                  <div className="relative w-36 h-36">
+                    <Image
+                      src={battles[activeSlide].right.img}
+                      alt={battles[activeSlide].right.name}
+                      fill
+                      className="object-contain drop-shadow-xl"
+                    />
+                  </div>
+                  <span className="text-sm font-bold text-foreground/70">{battles[activeSlide].right.name}</span>
                 </div>
               </div>
 
