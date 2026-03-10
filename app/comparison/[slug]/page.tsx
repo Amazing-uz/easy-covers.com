@@ -59,7 +59,7 @@ export default async function ComparisonArticlePage({
       {/* VS visual */}
       <section className="py-10">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid grid-cols-2 rounded-2xl overflow-hidden shadow-lg h-72 relative">
+          <div className="grid grid-cols-2 rounded-2xl overflow-hidden shadow-lg h-96 relative">
             <div className="relative overflow-hidden">
               <Image src={item.leftImg} alt={item.leftName} fill className="object-cover" />
               <div className="absolute inset-0 bg-black/20" />
