@@ -30,22 +30,9 @@ export function Footer() {
 
         {/* Divider */}
         <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2026 EasyCo. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition text-sm">
-                Twitter
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition text-sm">
-                Instagram
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition text-sm">
-                YouTube
-              </Link>
-            </div>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            © 2026 EasyCo. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
