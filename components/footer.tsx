@@ -29,9 +29,12 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-border pt-8">
+        <div className="border-t border-border pt-8 flex flex-col gap-2">
           <p className="text-sm text-muted-foreground">
             © 2026 EasyCo. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground/70">
+            As an Amazon Associate, we earn from qualifying purchases.
           </p>
         </div>
       </div>
