@@ -59,18 +59,20 @@ export default async function ComparisonArticlePage({
       {/* VS visual */}
       <section className="py-10">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid grid-cols-2 rounded-2xl overflow-hidden shadow-lg h-64 relative">
-            <div className={`${item.leftBg} flex flex-col items-center justify-center gap-3`}>
-              <div className="relative w-40 h-40">
-                <Image src={item.leftImg} alt={item.leftName} fill className="object-contain drop-shadow-xl" />
-              </div>
-              <span className="text-sm font-bold text-foreground/70">{item.leftName}</span>
+          <div className="grid grid-cols-2 rounded-2xl overflow-hidden shadow-lg h-72 relative">
+            <div className="relative overflow-hidden">
+              <Image src={item.leftImg} alt={item.leftName} fill className="object-cover" />
+              <div className="absolute inset-0 bg-black/20" />
+              <span className="absolute bottom-4 left-0 right-0 text-center text-sm font-bold text-white drop-shadow-lg">
+                {item.leftName}
+              </span>
             </div>
-            <div className={`${item.rightBg} flex flex-col items-center justify-center gap-3`}>
-              <div className="relative w-40 h-40">
-                <Image src={item.rightImg} alt={item.rightName} fill className="object-contain drop-shadow-xl" />
-              </div>
-              <span className="text-sm font-bold text-foreground/70">{item.rightName}</span>
+            <div className="relative overflow-hidden">
+              <Image src={item.rightImg} alt={item.rightName} fill className="object-cover" />
+              <div className="absolute inset-0 bg-black/20" />
+              <span className="absolute bottom-4 left-0 right-0 text-center text-sm font-bold text-white drop-shadow-lg">
+                {item.rightName}
+              </span>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
               <div className="bg-background border-4 border-primary rounded-full w-16 h-16 flex items-center justify-center font-black text-primary text-lg shadow-xl">
@@ -123,8 +125,8 @@ export default async function ComparisonArticlePage({
             {/* Left */}
             <Card className="p-6 border-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="relative w-10 h-10">
-                  <Image src={item.leftImg} alt={item.leftName} fill className="object-contain" />
+                <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0">
+                  <Image src={item.leftImg} alt={item.leftName} fill className="object-cover" />
                 </div>
                 <h3 className="font-bold text-lg">{item.leftName}</h3>
               </div>
@@ -149,8 +151,8 @@ export default async function ComparisonArticlePage({
             {/* Right */}
             <Card className="p-6 border-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="relative w-10 h-10">
-                  <Image src={item.rightImg} alt={item.rightName} fill className="object-contain" />
+                <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0">
+                  <Image src={item.rightImg} alt={item.rightName} fill className="object-cover" />
                 </div>
                 <h3 className="font-bold text-lg">{item.rightName}</h3>
               </div>
