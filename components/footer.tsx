@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-foreground/5 border-t border-border py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -15,17 +15,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Honest product comparisons and tests
             </p>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h4 className="font-bold mb-4">Categories</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-foreground transition">Cases</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition">Smartphones</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition">Accessories</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition">Headphones</Link></li>
-            </ul>
           </div>
 
           {/* Legal */}
