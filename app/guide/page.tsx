@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Check } from 'lucide-react'
+import Image from 'next/image'
 
 export default function GuidePage() {
   return (
@@ -65,21 +66,30 @@ export default function GuidePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { name: 'Leather', emoji: '🧥', color: 'from-amber-400', features: ['Premium look', 'Durable', 'Expensive'] },
-                { name: 'Silicone', emoji: '🏰', color: 'from-cyan-400', features: ['Affordable', 'Practical', 'Collects dust'] },
-                { name: 'TPU', emoji: '🛡️', color: 'from-blue-400', features: ['Balance', 'Good protection', 'Reliable'] },
+                { name: 'Leather', img: '/images/cards/leather-case.jpg', features: ['Premium look', 'Durable', 'Expensive'] },
+                { name: 'Silicone', img: '/images/cards/silicone-case.jpg', features: ['Affordable', 'Practical', 'Collects dust'] },
+                { name: 'TPU', img: '/images/cards/tpu-case.jpg', features: ['Balance', 'Good protection', 'Reliable'] },
               ].map((material, idx) => (
-                <Card key={idx} className="p-4 bg-gradient-to-br from-background to-background hover:shadow-lg transition">
-                  <div className="text-3xl mb-2">{material.emoji}</div>
-                  <h3 className="font-bold mb-3">{material.name}</h3>
-                  <ul className="space-y-2">
-                    {material.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-green-500" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <Card key={idx} className="overflow-hidden hover:shadow-lg transition">
+                  <div className="relative h-44 w-full">
+                    <Image
+                      src={material.img}
+                      alt={material.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold mb-3">{material.name}</h3>
+                    <ul className="space-y-2">
+                      {material.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Check className="w-4 h-4 text-green-500" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </Card>
               ))}
             </div>
