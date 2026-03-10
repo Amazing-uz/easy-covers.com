@@ -5,7 +5,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Mail, MessageSquare, Clock } from 'lucide-react'
+import { Mail, MessageSquare, Clock, MapPin, Phone } from 'lucide-react'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -47,25 +47,42 @@ export default function ContactPage() {
             <div className="flex flex-col gap-4">
               <Card className="p-6 border-2">
                 <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <Mail className="w-5 h-5 text-primary" />
+                  <MapPin className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="font-bold mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Email</h3>
-                <p className="text-sm text-muted-foreground">hello@easyco.com</p>
+                <h3 className="font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Address</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  1408 Olen Thomas Drive<br />
+                  Wichita Falls, Texas 76301<br />
+                  United States
+                </p>
               </Card>
 
               <Card className="p-6 border-2">
                 <div className="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
-                  <MessageSquare className="w-5 h-5 text-secondary" />
+                  <Phone className="w-5 h-5 text-secondary" />
                 </div>
-                <h3 className="font-bold mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Press & Partnerships</h3>
-                <p className="text-sm text-muted-foreground">press@easyco.com</p>
+                <h3 className="font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Phone</h3>
+                <a
+                  href="tel:+19407044576"
+                  className="text-sm text-muted-foreground hover:text-primary transition"
+                >
+                  +1 (940) 704-4576
+                </a>
+              </Card>
+
+              <Card className="p-6 border-2">
+                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Email</h3>
+                <p className="text-sm text-muted-foreground">hello@easyco.com</p>
               </Card>
 
               <Card className="p-6 border-2">
                 <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center mb-4">
                   <Clock className="w-5 h-5 text-cyan-600" />
                 </div>
-                <h3 className="font-bold mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Response Time</h3>
+                <h3 className="font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Response Time</h3>
                 <p className="text-sm text-muted-foreground">Usually within 24 hours on weekdays</p>
               </Card>
             </div>
