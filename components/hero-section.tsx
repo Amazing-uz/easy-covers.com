@@ -54,18 +54,19 @@ export function HeroSection() {
               </div>
 
               {/* Versus Container */}
-              <div className="relative grid grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg mb-8 h-64">
+              <div className="relative grid grid-cols-2 rounded-2xl overflow-hidden shadow-lg mb-8 h-64">
                 {/* Left Side */}
-                <div className={`${battles[activeSlide].left.bg} flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-300`}>
-                  <div className="relative w-36 h-36">
-                    <Image
-                      src={battles[activeSlide].left.img}
-                      alt={battles[activeSlide].left.name}
-                      fill
-                      className="object-contain drop-shadow-xl"
-                    />
-                  </div>
-                  <span className="text-sm font-bold text-foreground/70">{battles[activeSlide].left.name}</span>
+                <div className="relative overflow-hidden group">
+                  <Image
+                    src={battles[activeSlide].left.img}
+                    alt={battles[activeSlide].left.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/25" />
+                  <span className="absolute bottom-3 left-0 right-0 text-center text-sm font-bold text-white drop-shadow-md">
+                    {battles[activeSlide].left.name}
+                  </span>
                 </div>
 
                 {/* VS Badge */}
@@ -76,16 +77,17 @@ export function HeroSection() {
                 </div>
 
                 {/* Right Side */}
-                <div className={`${battles[activeSlide].right.bg} flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-300`}>
-                  <div className="relative w-36 h-36">
-                    <Image
-                      src={battles[activeSlide].right.img}
-                      alt={battles[activeSlide].right.name}
-                      fill
-                      className="object-contain drop-shadow-xl"
-                    />
-                  </div>
-                  <span className="text-sm font-bold text-foreground/70">{battles[activeSlide].right.name}</span>
+                <div className="relative overflow-hidden group">
+                  <Image
+                    src={battles[activeSlide].right.img}
+                    alt={battles[activeSlide].right.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/25" />
+                  <span className="absolute bottom-3 left-0 right-0 text-center text-sm font-bold text-white drop-shadow-md">
+                    {battles[activeSlide].right.name}
+                  </span>
                 </div>
               </div>
 
