@@ -73,18 +73,14 @@ export default function ComparisonsPage() {
                 <Link key={item.slug} href={`/comparison/${item.slug}`}>
                   <Card className="group overflow-hidden border-2 hover:border-primary hover:shadow-xl transition-all duration-300 cursor-pointer">
                     {/* VS Visual */}
-                    <div className="grid grid-cols-2 h-40 relative">
-                      <div className={`${item.leftBg} flex flex-col items-center justify-center gap-2 overflow-hidden`}>
-                        <div className="relative w-24 h-24">
-                          <Image src={item.leftImg} alt={item.leftName} fill className="object-contain" />
-                        </div>
-                        <span className="text-xs font-bold text-foreground/70">{item.leftName}</span>
+                    <div className="grid grid-cols-2 h-48 relative">
+                      <div className="relative overflow-hidden">
+                        <Image src={item.leftImg} alt={item.leftName} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span className="absolute bottom-2 left-0 right-0 text-center text-xs font-bold text-white drop-shadow-md">{item.leftName}</span>
                       </div>
-                      <div className={`${item.rightBg} flex flex-col items-center justify-center gap-2 overflow-hidden`}>
-                        <div className="relative w-24 h-24">
-                          <Image src={item.rightImg} alt={item.rightName} fill className="object-contain" />
-                        </div>
-                        <span className="text-xs font-bold text-foreground/70">{item.rightName}</span>
+                      <div className="relative overflow-hidden">
+                        <Image src={item.rightImg} alt={item.rightName} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span className="absolute bottom-2 left-0 right-0 text-center text-xs font-bold text-white drop-shadow-md">{item.rightName}</span>
                       </div>
                       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                         <div className="bg-background border-2 border-primary rounded-full w-10 h-10 flex items-center justify-center font-black text-primary text-sm shadow-lg">
@@ -131,18 +127,14 @@ export default function ComparisonsPage() {
                 <Link key={item.slug} href={`/comparison/${item.slug}`}>
                   <Card className="group overflow-hidden border-2 hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer h-full flex flex-col">
                     {/* VS Visual compact */}
-                    <div className="grid grid-cols-2 h-32 relative">
-                      <div className={`${item.leftBg} flex flex-col items-center justify-center gap-1 overflow-hidden`}>
-                        <div className="relative w-16 h-16">
-                          <Image src={item.leftImg} alt={item.leftName} fill className="object-contain" />
-                        </div>
-                        <span className="text-xs font-semibold text-foreground/60">{item.leftName}</span>
+                    <div className="grid grid-cols-2 h-36 relative">
+                      <div className="relative overflow-hidden">
+                        <Image src={item.leftImg} alt={item.leftName} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span className="absolute bottom-1.5 left-0 right-0 text-center text-xs font-bold text-white drop-shadow-md">{item.leftName}</span>
                       </div>
-                      <div className={`${item.rightBg} flex flex-col items-center justify-center gap-1 overflow-hidden`}>
-                        <div className="relative w-16 h-16">
-                          <Image src={item.rightImg} alt={item.rightName} fill className="object-contain" />
-                        </div>
-                        <span className="text-xs font-semibold text-foreground/60">{item.rightName}</span>
+                      <div className="relative overflow-hidden">
+                        <Image src={item.rightImg} alt={item.rightName} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <span className="absolute bottom-1.5 left-0 right-0 text-center text-xs font-bold text-white drop-shadow-md">{item.rightName}</span>
                       </div>
                       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                         <div className="bg-background border-2 border-border rounded-full w-8 h-8 flex items-center justify-center font-black text-foreground text-xs shadow">
