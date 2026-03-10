@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
@@ -16,8 +15,8 @@ export function ScoreBreakdownSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left — bar chart */}
+        <div className="max-w-2xl mx-auto">
+          {/* Bar chart */}
           <div>
             <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold mb-4">
               Score Breakdown
@@ -73,33 +72,7 @@ export function ScoreBreakdownSection() {
             </Link>
           </div>
 
-          {/* Right — product images */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative rounded-2xl overflow-hidden h-64 shadow-lg bg-amber-50">
-              <Image
-                src="/images/cards/leather-case.jpg"
-                alt="Leather case"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
-                <p className="text-white text-sm font-bold">Leather Case</p>
-                <p className="text-white/80 text-xs">Score: 72/100</p>
-              </div>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden h-64 shadow-lg bg-cyan-50 mt-8">
-              <Image
-                src="/images/cards/silicone-case.jpg"
-                alt="Silicone case"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
-                <p className="text-white text-sm font-bold">Silicone Case</p>
-                <p className="text-white/80 text-xs">Score: 78/100</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
