@@ -11,7 +11,6 @@ export default function TopPicksPage() {
     {
       rank: 1,
       title: 'Leather Case Pro Max',
-      price: '$89.99',
       rating: 5,
       image: '/images/cards/leather-case.jpg',
       pros: ['Premium feel', 'Excellent protection', 'Improves with age', 'Durable'],
@@ -22,7 +21,6 @@ export default function TopPicksPage() {
     {
       rank: 2,
       title: 'Silicone Case Standard',
-      price: '$14.99',
       rating: 4,
       image: '/images/cards/silicone-case.jpg',
       pros: ['Affordable', 'Easy to clean', 'Great grip', 'Multiple colors'],
@@ -33,7 +31,6 @@ export default function TopPicksPage() {
     {
       rank: 3,
       title: 'TPU Hybrid Case',
-      price: '$24.99',
       rating: 4.5,
       image: '/images/cards/tpu-hybrid.jpg',
       pros: ['Perfect balance', 'Good drop protection', 'Easy to clean', 'Reliable'],
@@ -44,7 +41,6 @@ export default function TopPicksPage() {
     {
       rank: 4,
       title: 'Eco-Friendly Case',
-      price: '$19.99',
       rating: 4.2,
       image: '/images/cards/eco-case.jpg',
       pros: ['Biodegradable', 'Eco-conscious', 'Good protection', 'Affordable'],
@@ -120,12 +116,8 @@ export default function TopPicksPage() {
                       </div>
                     </div>
 
-                    {/* Price and Button */}
-                    <div className="flex flex-col items-center md:items-end justify-center gap-3">
-                      <div className="text-center md:text-right">
-                        <p className="text-2xl font-bold text-primary">{pick.price}</p>
-                        <p className="text-xs text-muted-foreground">Average Price</p>
-                      </div>
+                    {/* Button */}
+                    <div className="flex flex-col items-center md:items-end justify-center">
                       <Link href="/comparison">
                         <Button variant="outline" size="sm">
                           Details <ArrowRight className="w-3 h-3 ml-1" />
