@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Check } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function GuidePage() {
   return (
@@ -190,9 +191,11 @@ export default function GuidePage() {
             <p className="mb-6 opacity-90">
               Check out our detailed product comparisons
             </p>
-            <Button className="bg-white text-green-600 hover:bg-gray-100">
-              To Comparisons <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+           <Link href="/comparison">
+              <Button className="bg-white text-green-600 hover:bg-gray-100 ">
+                To Comparisons <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </Card>
         </div>
       </section>
