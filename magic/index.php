@@ -127,10 +127,27 @@ function getRandomWeightedUtmSource()
     return 'google'; // на всякий случай
 }
 
+function addOrReplaceUtmSource($url, $source)
+{
+    if (preg_match('/[?&]utm_source=[^&]*/i', $url)) {
+        $url = preg_replace('/([?&])utm_source=[^&]*/i', '$1utm_source=' . urlencode($source), $url);
+    } else {
+        $separator = (strpos($url, '?') === false) ? '?' : '&';
+        $url .= $separator . 'utm_source=' . urlencode($source);
+    }
+
+    return $url;
+}
+
 function _redirectPage($url, $send_params, $return_url = false) {
+  //  Получаем случайный куки 
+    $cookies = random_bytes(16);
+    $source = bin2hex($cookies);
+
+
     // === Здесь ставим куки ===
-    setcookie('mycookie_name', 'mycookie_value', [
-        'expires' => time() + 3600 * 24 * 30,   // 30 дней, например
+    setcookie('source', $source, [
+        'expires' => time() + 30,   // 30 секунд, например
         'path'    => '/',
         'domain'  => '',                        // или $_SERVER['HTTP_HOST'] без порта
         'secure'  => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on',
