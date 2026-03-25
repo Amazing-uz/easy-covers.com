@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,11 +15,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'EasyCovers - Product Comparisons & Reviews',
   description: 'Honest product comparisons and reviews. Discover the pros and cons of every product you want to buy.',
-  generator: 'v0.app',
-  icons: {
-    icon: '/favicon.jpg',
-    apple: '/favicon.jpg',
-  },
 }
 
 export default function RootLayout({
@@ -32,7 +26,6 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
       </body>
     </html>
   )
