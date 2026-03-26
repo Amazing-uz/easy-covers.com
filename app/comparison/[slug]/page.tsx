@@ -147,7 +147,7 @@ export default async function ComparisonArticlePage({
                 ))}
               </ul>
               <a
-                href={item.leftAmazonUrl}
+                href={item.leftAmazonUrl + "/?tag=easycover06-20"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-[#FF9900] hover:bg-[#e88a00] text-white text-sm font-bold transition-colors"
@@ -182,7 +182,7 @@ export default async function ComparisonArticlePage({
                 ))}
               </ul>
               <a
-                href={item.rightAmazonUrl}
+                href={item.rightAmazonUrl + "/?tag=easycover06-20"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-[#FF9900] hover:bg-[#e88a00] text-white text-sm font-bold transition-colors"
