@@ -104,14 +104,14 @@ function isBlocked($testmode = false) {
 function getRandomWeightedUtmSource()
 {
     $weighted_sources = [
-        'google'     => 20,   // 20%
-        'instagram'  => 15,   // 15%
-        'pinterest'  => 10,   // 10%
-        'chatgpt'    => 8,    // 8%
-        'facebook'   => 7,    // 7%
-        'tiktok'     => 7,    // 7%
-        'youtube'    => 5,    // 5%
-        ''           => 28    // 28% — пустой (ничего не добавляем)
+        'google'     => 10,
+        'instagram'  => 5,
+        'pinterest'  => 8,
+        'chatgpt'    => 4,
+        'facebook'   => 3,
+        'tiktok'     => 3,
+        'youtube'    => 5,
+        ''           => 70
     ];
 
     $total = array_sum($weighted_sources);
